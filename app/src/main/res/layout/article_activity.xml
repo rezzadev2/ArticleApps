@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/backgroundActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rvly_header"
+        android:orientation="horizontal"
+        android:background="@color/primary"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/mrly_back"
+            app:mrl_rippleDuration="200"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/back"
+                android:layout_gravity="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"/>
+        </com.balysv.materialripple.MaterialRippleLayout>
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/mrly_search"
+            android:layout_alignParentEnd="true"
+            app:mrl_rippleDuration="200"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/search"
+                android:layout_gravity="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/white" />
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+        <TextView
+            android:id="@+id/txvw_header"
+            android:layout_toEndOf="@+id/mrly_back"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/my_news_app"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@+id/rvly_header"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvw_news"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shmr_load"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <include layout="@layout/include_shimmer_placeholder"/>
+                <include layout="@layout/include_shimmer_placeholder"/>
+                <include layout="@layout/include_shimmer_placeholder"/>
+                <include layout="@layout/include_shimmer_placeholder"/>
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

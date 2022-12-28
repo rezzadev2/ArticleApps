@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">News Apps</string>
+    <string name="news_apps_test">News Apps Test</string>
+    <string name="my_news_app">My News App</string>
+    <string name="search_news">Find News</string>
+    <string name="search_source">Search Source</string>
+    <string name="news_category">News Category</string>
+    <string name="news_source">News Source</string>
+    <string name="find_source">Find Source</string>
+    <string name="business">Business</string>
+    <string name="type_news_here">Type news here..</string>
+    <string name="find_source_from_sport">Find source from X1</string>
+    <string name="failed">Failed</string>
+</resources>
