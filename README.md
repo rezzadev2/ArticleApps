@@ -5,7 +5,7 @@
 
 File APK 
 
-<a href="shorturl.at/bKTZ7"> FILE APK <a/>
+<a href="https://shorturl.at/bKTZ77"> Download FILE APK <a/>
 
 Screenshot :
 
