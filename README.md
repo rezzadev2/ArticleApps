@@ -5,7 +5,7 @@
 
 File APK 
 
-<a href="https://shorturl.at/bKTZ77](https://firebasestorage.googleapis.com/v0/b/vmafile.appspot.com/o/Article.apk?alt=media&token=35693b6a-9042-41b1-9b4d-1414ad308091"> Download FILE APK <a/>
+<a href="https://firebasestorage.googleapis.com/v0/b/vmafile.appspot.com/o/Article.apk?alt=media&token=35693b6a-9042-41b1-9b4d-1414ad308091"> Download FILE APK <a/>
 
 Screenshot :
 
