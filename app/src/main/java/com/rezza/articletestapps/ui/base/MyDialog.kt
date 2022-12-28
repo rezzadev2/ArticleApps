@@ -32,13 +32,9 @@ abstract class MyDialog(context: Activity?) : Dialog(context!!, R.style.AppTheme
         this.initLayout(view)
     }
 
-    protected fun setTransparent() {
+    private fun setTransparent() {
         window!!.statusBarColor = Color.parseColor("#00ffffff")
 
-    }
-
-    override fun show() {
-        super.show()
     }
 
     protected abstract fun setLayout(): Int

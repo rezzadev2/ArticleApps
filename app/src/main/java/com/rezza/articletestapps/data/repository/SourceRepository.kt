@@ -23,8 +23,9 @@ class SourceRepository {
 
     fun getSourceByCategory(category: String): LiveData<SourceResponseModel>? {
         data = MutableLiveData<SourceResponseModel>()
-        val url: String =
-            ApiConfig.GET_SOURCE + "?apiKey=" + ApiConfig.API_KEY + "&category=" + category
+        val url: String = ApiConfig.GET_SOURCE + "?apiKey=" + ApiConfig.API_KEY + "&category=" + category
+
+        Log.d("SourceRepository", "API $url")
         apiInterface.getSource(url)?.enqueue(object : Callback<SourceResponseModel?> {
             override fun onResponse(
                 call: Call<SourceResponseModel?>,
@@ -32,11 +33,14 @@ class SourceRepository {
             ) {
                 var rep: SourceResponseModel? = response.body()
                 val code: ErrorCode = ErrorCode.map(response.code())
-                if (response.code() == 200 && rep != null) {
-                    rep.code = code.code.toString()
+
+                if (rep != null) {
+                    Log.d("SourceRepository", "code $code")
+                    rep.code =code.message
+                    rep.message = code.message
                     data?.postValue(rep)
                 } else {
-                    Log.e("HomeRepository", "response " + response.code())
+                    Log.e("SourceRepository", "response " + response.code())
                     rep = SourceResponseModel()
                     rep.code = code.code.toString()
                     rep.message = code.message
@@ -45,7 +49,7 @@ class SourceRepository {
             }
 
             override fun onFailure(call: Call<SourceResponseModel?>, t: Throwable) {
-                Log.e("HomeRepository", "onFailure")
+                Log.e("SourceRepository", "onFailure")
                 val rep = SourceResponseModel()
                 rep.code= "failure"
                 rep.message = "Unknown response message"

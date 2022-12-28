@@ -1,6 +1,7 @@
 package com.rezza.articletestapps.ui.view
 
 import android.app.Activity
+import android.util.Log
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.TextView
@@ -19,7 +20,7 @@ class ErrorDialog(context: Activity?) : MyDialog(context) {
     }
 
     override fun initLayout(view: View?) {
-        view!!.findViewById<View>(R.id.mrly_action).setOnClickListener { view1: View? -> dismiss() }
+        view!!.findViewById<View>(R.id.mrly_action).setOnClickListener { dismiss() }
         tv_title = view.findViewById(R.id.txvw_title)
         tv_description = view.findViewById(R.id.txvw_description)
         card_body = view.findViewById(R.id.card_body)
@@ -36,6 +37,12 @@ class ErrorDialog(context: Activity?) : MyDialog(context) {
         tv_title?.text = title
         tv_description?.text = description
         card_body?.visibility = View.VISIBLE
-        card_body?.startAnimation(AnimationUtils.loadAnimation(ownerActivity, R.anim.zoom_in))
+        val animation = AnimationUtils.loadAnimation(context, R.anim.zoom_in)
+        if (animation != null){
+            card_body?.startAnimation(animation)
+        }
+        else {
+            Log.e("TAGRZ","Animation NULL")
+        }
     }
 }

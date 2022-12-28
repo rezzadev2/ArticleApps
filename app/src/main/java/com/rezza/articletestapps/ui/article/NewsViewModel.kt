@@ -1,4 +1,4 @@
-package com.rezza.articletestapps.ui.news
+package com.rezza.articletestapps.ui.article
 
 import android.annotation.SuppressLint
 import android.app.Application
@@ -11,6 +11,7 @@ import com.rezza.articletestapps.data.ErrorCode
 import com.rezza.articletestapps.data.NewsResponseModel
 import com.rezza.articletestapps.data.repository.NewsRepository
 
+@Suppress("DEPRECATION")
 class NewsViewModel(app: Application) : AndroidViewModel(app) {
 
     private val repository: NewsRepository = NewsRepository()
@@ -23,7 +24,7 @@ class NewsViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun getNews(sourceId: String?, page: Int) {
-        if (isNetworkConnected) {
+        if (isNotConnected) {
             val data: MutableLiveData<NewsResponseModel> = MutableLiveData<NewsResponseModel>()
             data.postValue(initErrorInternet())
             liveData = data
@@ -33,7 +34,7 @@ class NewsViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun findNews(sourceId: String?, page: Int, find: String?) {
-        if (isNetworkConnected) {
+        if (isNotConnected) {
             val data: MutableLiveData<NewsResponseModel> = MutableLiveData<NewsResponseModel>()
             data.postValue(initErrorInternet())
             liveData = data
@@ -43,7 +44,7 @@ class NewsViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun findAllNews(page: Int, find: String?) {
-        if (isNetworkConnected) {
+        if (isNotConnected) {
             val data: MutableLiveData<NewsResponseModel> = MutableLiveData<NewsResponseModel>()
             data.postValue(initErrorInternet())
             liveData = data
@@ -64,10 +65,10 @@ class NewsViewModel(app: Application) : AndroidViewModel(app) {
         return liveData
     }
 
-    private val isNetworkConnected: Boolean
+    private val isNotConnected: Boolean
         get() {
             val cm: ConnectivityManager =
                 application.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            return cm.getActiveNetworkInfo() == null || !cm.getActiveNetworkInfo()!!.isConnected()
+            return cm.activeNetworkInfo == null || !cm.activeNetworkInfo!!.isConnected
         }
 }

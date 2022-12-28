@@ -17,9 +17,9 @@ import com.rezza.articletestapps.R
 import com.rezza.articletestapps.data.NewsResponseModel
 import com.rezza.articletestapps.entities.News
 import com.rezza.articletestapps.ui.base.MyActivity
-import com.rezza.articletestapps.ui.news.NewsAdapter
-import com.rezza.articletestapps.ui.news.NewsDetailActivity
-import com.rezza.articletestapps.ui.news.NewsViewModel
+import com.rezza.articletestapps.ui.article.NewsAdapter
+import com.rezza.articletestapps.ui.article.NewsDetailActivity
+import com.rezza.articletestapps.ui.article.NewsViewModel
 import com.rezza.articletestapps.ui.view.ErrorDialog
 import com.rezza.articletestapps.utility.Utility
 import java.util.*

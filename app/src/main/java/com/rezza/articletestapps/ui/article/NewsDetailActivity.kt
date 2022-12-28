@@ -1,4 +1,4 @@
-package com.rezza.articletestapps.ui.news
+package com.rezza.articletestapps.ui.article
 
 import android.annotation.SuppressLint
 import android.os.Handler

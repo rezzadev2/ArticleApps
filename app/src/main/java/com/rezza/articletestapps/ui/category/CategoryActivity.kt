@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rezza.articletestapps.R
 import com.rezza.articletestapps.entities.Category
 import com.rezza.articletestapps.ui.base.MyActivity
+import com.rezza.articletestapps.ui.source.SourceActivity
 import com.rezza.articletestapps.ui.view.SearchView
 import java.util.*
 
@@ -46,9 +47,9 @@ class CategoryActivity : MyActivity(), CategoryAdapter.OnSelectedListener{
 
         mAdapter!!.setOnSelectedListener(object : CategoryAdapter.OnSelectedListener {
             override fun onSelected(data: Category?) {
-//                val intent = Intent(mActivity, SourceActivity::class.java)
-//                intent.putExtra("category", data)
-//                startActivity(intent)
+                val intent = Intent(mActivity, SourceActivity::class.java)
+                intent.putExtra("category", data)
+                startActivity(intent)
             }
 
         })

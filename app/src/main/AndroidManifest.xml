@@ -35,9 +35,10 @@
         </activity>
         <activity android:name=".ui.category.CategoryActivity" android:screenOrientation="nosensor"/>
         <activity android:name=".ui.category.FindAllActivity" android:screenOrientation="nosensor"/>
-        <activity android:name=".ui.news.FindActivity" android:screenOrientation="nosensor"/>
-        <activity android:name=".ui.news.NewsDetailActivity" android:screenOrientation="nosensor"/>
-        <activity android:name=".ui.news.NewsActivity" android:screenOrientation="nosensor"/>
+        <activity android:name=".ui.article.FindActivity" android:screenOrientation="nosensor"/>
+        <activity android:name=".ui.article.NewsDetailActivity" android:screenOrientation="nosensor"/>
+        <activity android:name=".ui.article.NewsActivity" android:screenOrientation="nosensor"/>
+        <activity android:name=".ui.source.SourceActivity" android:screenOrientation="nosensor"/>
     </application>
 
 </manifest>
